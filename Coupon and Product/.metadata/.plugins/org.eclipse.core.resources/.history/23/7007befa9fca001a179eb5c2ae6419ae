@@ -1,0 +1,5 @@
+package com.sweta.cnp.dao;
+
+public class ProductDAO {
+
+}

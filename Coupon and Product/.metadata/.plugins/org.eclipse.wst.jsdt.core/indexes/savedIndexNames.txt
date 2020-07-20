@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/swetapaudel/Desktop/Project/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2583080414.index
+2089720164.index
+1645267482.index
+1935643890.index
+359296141.index
+3364195797.index
+3417837363.index

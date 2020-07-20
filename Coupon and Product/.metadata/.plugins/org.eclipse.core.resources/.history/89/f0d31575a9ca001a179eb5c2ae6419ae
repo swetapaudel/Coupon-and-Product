@@ -1,0 +1,48 @@
+package com.sweta.cnp.controllers;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sweta.cnp.dao.CouponDAO;
+import com.sweta.cnp.dao.ProductDAO;
+import com.sweta.cnp.model.Coupon;
+import com.sweta.cnp.model.Product;
+
+/**
+ * Servlet implementation class ProductController
+ */
+@WebServlet("/ProductController")
+public class ProductController extends HttpServlet {
+	CouponDAO couponDAO = new CouponDAO();
+	ProductDAO productDAO = new ProductDAO();
+	
+	private static final long serialVersionUID = 1L;
+
+	public ProductController() {
+		super();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String name = request.getParameter("name");
+		String description = request.getParameter("description");
+		String price = request.getParameter("price");
+		String couponCode = request.getParameter("cuponCode");
+		Coupon coupon = couponDAO.findByCode(couponCode);
+		
+;		Product product = new Product();
+		product.setName(name);
+		product.setDescription(description);
+		product.setPrice(new BigDecimal(price.subtract(coupon.getDiscount())));
+		
+
+	}
+
+}

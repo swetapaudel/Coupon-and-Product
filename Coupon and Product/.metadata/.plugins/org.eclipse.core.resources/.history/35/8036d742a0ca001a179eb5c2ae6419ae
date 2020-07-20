@@ -1,0 +1,5 @@
+package com.sweta.cnp.util;
+
+public class ConnectionUtil {
+
+}
